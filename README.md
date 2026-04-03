@@ -1,6 +1,6 @@
-# Sales Analytics — End-to-End Data Analysis Project
+# Sales Analytics — End-to-End Excel Data Analysis Project
 
-A comprehensive data analytics project analyzing **9,994 sales orders** across the United States (2014–2017). This project demonstrates the full spectrum of analytics techniques used by data analysts — from exploratory data analysis and descriptive statistics to customer segmentation, time series analysis, and executive dashboarding.
+A comprehensive Excel-based analytics project analyzing **9,994 sales orders** across the United States (2014–2017). This project demonstrates the full spectrum of analytics techniques used by data analysts — built entirely in Microsoft Excel using **4,400+ formulas** (SUMIF, COUNTIF, AVERAGEIF, PERCENTRANK, PERCENTILE, nested IFs, and more).
 
 ---
 
@@ -25,62 +25,79 @@ A comprehensive data analytics project analyzing **9,994 sales orders** across t
 
 ---
 
+## Excel Workbook Overview
+
+The [`Sales_Analysis_Report.xlsx`](Sales_Analysis_Report.xlsx) contains **12 professionally formatted sheets** with **4,400+ dynamic formulas** — every computed value is traceable (click any cell to see the formula in the formula bar).
+
+| # | Sheet | Key Formulas Used | Description |
+|---|-------|-------------------|-------------|
+| 1 | **Raw Data** | `Delivery Days = Ship Date - Order Date`, `Profit Margin = Profit/Sales` | 9,994 cleaned records with formula-based computed columns |
+| 2 | **Summary Statistics** | `AVERAGE`, `MEDIAN`, `STDEV`, `PERCENTILE`, `VAR`, `COUNT` | 14 statistical measures across 5 metrics |
+| 3 | **Revenue Analysis** | `SUMPRODUCT`, `LEFT`, `TEXT` for year matching, YoY growth formulas | Yearly & monthly revenue trends with growth rates + charts |
+| 4 | **Profitability Analysis** | `SUMIF` across categories/sub-categories, margin calculations | Category & sub-category profit margins + pie/bar charts |
+| 5 | **Customer Segmentation** | `PERCENTRANK` + nested `IF` for R/F/M scoring, `COUNTIF`, `SUMIF` | Full RFM analysis on 793 customers — all scores formula-driven |
+| 6 | **Product Performance** | Profit margin formulas, cumulative % for ABC classification | Top/bottom products, ABC/Pareto 80-20 analysis |
+| 7 | **Regional Analysis** | `SUMIF`, `COUNTIF` on Region/State columns | Region & state-level performance comparison + charts |
+| 8 | **Time Series Analysis** | `AVERAGE(B{n-2}:B{n})` for moving averages, MoM growth formulas | 3-month & 6-month moving averages, seasonality index |
+| 9 | **Shipping Analysis** | `SUMIF`, `COUNTIF`, `AVERAGEIF` on Ship Mode | Ship mode distribution, delivery time analysis + pie chart |
+| 10 | **Discount Impact** | Margin formulas per discount band, category cross-tabulation | Discount bands vs profitability analysis |
+| 11 | **KPI Dashboard** | `SUM`, `COUNTA`, `AVERAGE` referencing Raw Data | Executive summary — 9 KPIs + category/region breakdowns |
+| 12 | **Cohort Analysis** | Revenue per cohort, avg revenue per customer formulas | Quarterly customer retention & revenue contribution |
+
+---
+
 ## Analytics Performed
 
 ### 1. Descriptive Statistics
-- Mean, median, standard deviation, skewness, kurtosis for all numeric fields
-- Distribution analysis across segments
+- Mean, median, standard deviation, variance, percentiles, IQR for Sales, Profit, Quantity, Discount, Delivery Days
+- Segment-level performance breakdown (Consumer, Corporate, Home Office)
 
 ### 2. Revenue Analysis
-- Yearly and quarterly revenue trends with YoY growth rates
-- Monthly revenue breakdown with seasonality identification
-- MoM growth rate tracking
+- Yearly and monthly revenue trends with YoY growth rates
+- Monthly revenue breakdown by year with seasonal patterns
+- Embedded bar and line charts
 
 ### 3. Profitability Analysis
 - Profit margins by category, sub-category, region, and segment
-- Identification of loss-making products and sub-categories
-- Cross-dimensional profitability comparison
+- Identification of loss-making sub-categories (Tables, Bookcases)
+- Category sales distribution (pie chart)
 
 ### 4. Customer Segmentation (RFM Analysis)
-- **Recency**: Days since last purchase
-- **Frequency**: Number of orders
-- **Monetary**: Total spend
-- Customers classified into: Champions, Loyal, Potential Loyalists, At Risk, Lost
-- Customer lifetime value analysis
+- **Recency**: Days since last purchase — scored using `PERCENTRANK` (lower = better = score 4)
+- **Frequency**: Number of unique orders — scored using `PERCENTRANK` (higher = better = score 4)
+- **Monetary**: Total lifetime spend — scored using `PERCENTRANK` (higher = better = score 4)
+- **RFM Score**: `=R+F+M` (formula in every row)
+- **Segment**: `=IF(RFM>=10,"Champions",IF(RFM>=8,"Loyal Customers",...))` (formula in every row)
+- All 793 customers scored and segmented — fully auditable
 
-### 5. Product Performance
-- Top/bottom products by revenue and profit
-- **ABC/Pareto Analysis**: 80/20 rule classification
-- Category and sub-category mix analysis
+### 5. Product Performance & ABC Analysis
+- Top 20 revenue-generating products
+- Top 10 loss-making products (highlighted in red)
+- ABC/Pareto classification: Class A (~38% of products) drives 80% of revenue
 
 ### 6. Regional Analysis
-- Performance comparison across 4 regions (West, East, Central, South)
-- State-level revenue and profit ranking
-- Top cities by revenue
+- 4-region comparison (West, East, Central, South) with SUMIF/COUNTIF formulas
+- Top 15 states ranked by revenue with profit margins
 
 ### 7. Time Series Analysis
-- Monthly revenue trend with 3-month and 6-month moving averages
-- Seasonality index calculation
-- Day-of-week and quarterly patterns
+- 48-month revenue trend with 3-month and 6-month moving averages (AVERAGE formulas)
+- Month-over-month growth rate tracking
+- Seasonality index (each month's average vs overall average)
 
 ### 8. Shipping Analysis
-- Shipping mode distribution and preference analysis
-- Delivery time analysis by ship mode
-- Shipping impact on profitability
+- Ship mode distribution (Standard Class, Second Class, First Class, Same Day)
+- Average delivery days per mode using AVERAGEIF
+- Delivery time distribution buckets
 
 ### 9. Discount Impact Analysis
-- Discount band analysis with profit margin correlation
-- Category-wise discount impact
-- Statistical correlation between discount levels and profitability
+- 6 discount bands (No Discount through 50%+) with profit margin analysis
+- Category x discount cross-tabulation
+- Clear pattern: margins turn negative above 20% discount
 
 ### 10. Cohort Analysis
-- Customer retention by first-purchase quarter
-- Revenue contribution by cohort
-- Cohort-based customer lifetime value
-
-### 11. Correlation Analysis
-- Correlation matrix across Sales, Profit, Quantity, Discount, Delivery Days
-- Key relationship identification
+- Customers grouped by first-purchase quarter
+- Retention rates at Month 0, 3, 6, 9, 12, 18, 24
+- Revenue contribution per cohort
 
 ---
 
@@ -122,14 +139,9 @@ A comprehensive data analytics project analyzing **9,994 sales orders** across t
 
 ```
 Sales-Analysis-Excel/
+├── Sales_Analysis_Report.xlsx   # 12-sheet Excel workbook (4,400+ formulas)
 ├── data/
-│   └── Sales_Orders.csv            # Raw dataset (9,994 records)
-├── output/
-│   └── Sales_Analysis_Report.xlsx   # 12-sheet Excel analytics workbook
-├── scripts/
-│   ├── sales_analysis.py           # EDA script (console output)
-│   ├── create_workbook.py          # Excel report generator
-│   └── generate_visualizations.py  # Chart/visualization generator
+│   └── Sales_Orders.csv         # Raw dataset (9,994 records)
 ├── images/
 │   ├── 01_executive_dashboard.png
 │   ├── 02_revenue_analysis.png
@@ -141,60 +153,14 @@ Sales-Analysis-Excel/
 │   ├── 08_shipping_analysis.png
 │   ├── 09_discount_impact.png
 │   └── 10_correlation_heatmap.png
-├── requirements.txt
 ├── .gitignore
 └── README.md
 ```
 
-## Excel Workbook Sheets
+## Tools Used
 
-The `Sales_Analysis_Report.xlsx` contains **12 professionally formatted sheets**:
-
-| # | Sheet | Description |
-|---|-------|-------------|
-| 1 | Raw Data | Cleaned dataset with calculated fields |
-| 2 | Summary Statistics | Descriptive stats (14 measures across 6 metrics) |
-| 3 | Revenue Analysis | Yearly/monthly trends with YoY growth + charts |
-| 4 | Profitability Analysis | Category/sub-category margins + pie/bar charts |
-| 5 | Customer Segmentation | RFM scoring, segment distribution + charts |
-| 6 | Product Performance | Top/bottom products, ABC/Pareto analysis |
-| 7 | Regional Analysis | Region/state-level performance + charts |
-| 8 | Time Series Analysis | Moving averages, seasonality index |
-| 9 | Shipping Analysis | Ship mode distribution, delivery time analysis |
-| 10 | Discount Impact | Discount bands, category-wise impact |
-| 11 | KPI Dashboard | Executive summary with all key metrics |
-| 12 | Cohort Analysis | Quarterly customer retention analysis |
-
----
-
-## Tech Stack
-
-- **Python 3.9+**
-- **pandas** — data manipulation and analysis
-- **NumPy** — numerical computations
-- **openpyxl** — Excel workbook creation with formatting and charts
-- **Matplotlib** — publication-quality visualizations
-- **Seaborn** — statistical data visualization
-
-## How to Run
-
-```bash
-# Clone the repository
-git clone https://github.com/anirudhagwl/Sales-Analysis-Excel.git
-cd Sales-Analysis-Excel
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the EDA script
-python scripts/sales_analysis.py
-
-# Generate the Excel workbook
-python scripts/create_workbook.py
-
-# Generate visualization charts
-python scripts/generate_visualizations.py
-```
+- **Microsoft Excel** — formulas, formatting, charts, data analysis
+- **Excel Functions**: SUMIF, COUNTIF, AVERAGEIF, SUMPRODUCT, PERCENTRANK, PERCENTILE, MEDIAN, STDEV, VAR, nested IF, AVERAGE, SUM, COUNTA, LEFT, TEXT
 
 ---
 
