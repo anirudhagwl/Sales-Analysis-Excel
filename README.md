@@ -101,37 +101,25 @@ The [`Sales_Analysis_Report.xlsx`](Sales_Analysis_Report.xlsx) contains **12 pro
 
 ---
 
-## Visualizations
+## Workbook Screenshots
 
-### Executive Dashboard
-![Executive Dashboard](images/01_executive_dashboard.png)
+### KPI Dashboard
+![KPI Dashboard](screenshots/kpi_dashboard.png)
 
 ### Revenue Analysis
-![Revenue Analysis](images/02_revenue_analysis.png)
+![Revenue Analysis](screenshots/revenue_analysis.png)
 
 ### Profitability Analysis
-![Profitability Analysis](images/03_profitability_analysis.png)
+![Profitability Analysis](screenshots/profitability_analysis.png)
 
-### Customer Segmentation (RFM)
-![Customer Segmentation](images/04_customer_segmentation.png)
+### Customer Segmentation (RFM Scoring)
+![Customer Segmentation](screenshots/customer_segmentation.png)
 
-### Product Performance & Pareto Analysis
-![Product Performance](images/05_product_performance.png)
-
-### Regional Analysis
-![Regional Analysis](images/06_regional_analysis.png)
-
-### Time Series & Seasonality
-![Time Series](images/07_time_series_seasonality.png)
-
-### Shipping Analysis
-![Shipping Analysis](images/08_shipping_analysis.png)
+### Time Series — Moving Averages
+![Time Series](screenshots/time_series.png)
 
 ### Discount Impact
-![Discount Impact](images/09_discount_impact.png)
-
-### Correlation Heatmap
-![Correlation Heatmap](images/10_correlation_heatmap.png)
+![Discount Impact](screenshots/discount_impact.png)
 
 ---
 
@@ -142,17 +130,13 @@ Sales-Analysis-Excel/
 ├── Sales_Analysis_Report.xlsx   # 12-sheet Excel workbook (4,400+ formulas)
 ├── data/
 │   └── Sales_Orders.csv         # Raw dataset (9,994 records)
-├── images/
-│   ├── 01_executive_dashboard.png
-│   ├── 02_revenue_analysis.png
-│   ├── 03_profitability_analysis.png
-│   ├── 04_customer_segmentation.png
-│   ├── 05_product_performance.png
-│   ├── 06_regional_analysis.png
-│   ├── 07_time_series_seasonality.png
-│   ├── 08_shipping_analysis.png
-│   ├── 09_discount_impact.png
-│   └── 10_correlation_heatmap.png
+├── screenshots/                     # Excel workbook screenshots
+│   ├── kpi_dashboard.png
+│   ├── revenue_analysis.png
+│   ├── profitability_analysis.png
+│   ├── customer_segmentation.png
+│   ├── time_series.png
+│   └── discount_impact.png
 ├── .gitignore
 └── README.md
 ```
