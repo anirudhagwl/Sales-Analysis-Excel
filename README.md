@@ -180,7 +180,7 @@ The `Sales_Analysis_Report.xlsx` contains **12 professionally formatted sheets**
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_GITHUB_USERNAME/Sales-Analysis-Excel.git
+git clone https://github.com/anirudhagwl/Sales-Analysis-Excel.git
 cd Sales-Analysis-Excel
 
 # Install dependencies
