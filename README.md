@@ -106,20 +106,23 @@ The [`Sales_Analysis_Report.xlsx`](Sales_Analysis_Report.xlsx) contains **12 pro
 ### KPI Dashboard
 ![KPI Dashboard](screenshots/kpi_dashboard.png)
 
-### Revenue Analysis
+### Summary Statistics & Segment Breakdown
+![Summary Statistics](screenshots/summary_statistics.png)
+
+### Revenue Analysis (Yearly + Monthly + Charts)
 ![Revenue Analysis](screenshots/revenue_analysis.png)
 
-### Profitability Analysis
-![Profitability Analysis](screenshots/profitability_analysis.png)
-
-### Customer Segmentation (RFM Scoring)
+### Customer Segmentation — RFM Scoring (All Formula-Driven)
 ![Customer Segmentation](screenshots/customer_segmentation.png)
 
-### Time Series — Moving Averages
-![Time Series](screenshots/time_series.png)
+### Product Performance & ABC/Pareto Analysis
+![Product Performance](screenshots/product_performance.png)
 
-### Discount Impact
-![Discount Impact](screenshots/discount_impact.png)
+### Regional Analysis — By Region & State
+![Regional Analysis](screenshots/regional_analysis.png)
+
+### Shipping & Delivery Analysis
+![Shipping Analysis](screenshots/shipping_analysis.png)
 
 ---
 
@@ -132,11 +135,12 @@ Sales-Analysis-Excel/
 │   └── Sales_Orders.csv         # Raw dataset (9,994 records)
 ├── screenshots/                     # Excel workbook screenshots
 │   ├── kpi_dashboard.png
+│   ├── summary_statistics.png
 │   ├── revenue_analysis.png
-│   ├── profitability_analysis.png
 │   ├── customer_segmentation.png
-│   ├── time_series.png
-│   └── discount_impact.png
+│   ├── product_performance.png
+│   ├── regional_analysis.png
+│   └── shipping_analysis.png
 ├── .gitignore
 └── README.md
 ```
